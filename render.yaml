@@ -1,0 +1,20 @@
+services:
+  - type: pserv
+    name: indrefosen-scraper
+    runtime: python
+    plan: starter
+    buildCommand: "pip install -r requirements.txt && playwright install --with-deps chromium"
+    startCommand: "python run_service.py"
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DATA_DIR
+        value: /data
+      - key: RUN_INTERVAL_HOURS
+        value: "24"
+      - key: RUN_ON_START
+        value: "true"
+    disk:
+      name: indrefosen-data
+      mountPath: /data
+      sizeGB: 1
