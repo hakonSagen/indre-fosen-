@@ -1,5 +1,5 @@
 services:
-  - type: pserv
+  - type: worker
     name: indrefosen-scraper
     runtime: python
     plan: starter
