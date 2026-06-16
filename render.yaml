@@ -8,6 +8,8 @@ services:
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: "0"
       - key: DATA_DIR
         value: /data
       - key: RUN_INTERVAL_HOURS
