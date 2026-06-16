@@ -3,7 +3,7 @@ services:
     name: indrefosen-scraper
     runtime: python
     plan: starter
-    buildCommand: "pip install -r requirements.txt && playwright install --with-deps chromium"
+    buildCommand: "pip install -r requirements.txt && playwright install chromium"
     startCommand: "python run_service.py"
     envVars:
       - key: ANTHROPIC_API_KEY
